@@ -705,58 +705,6 @@ const fvs=document.querySelectorAll('.fv,.fv2,.fv3');
 const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});},{threshold:.1});
 fvs.forEach(f=>obs.observe(f));
 
-// CALENDAR
-const MO=['JANUAR','FEBRUAR','MÄRZ','APRIL','MAI','JUNI','JULI','AUGUST','SEPTEMBER','OKTOBER','NOVEMBER','DEZEMBER'];
-let cy=2026,cm=5,sd=null;
-function rCal(){
-  document.getElementById('calMo').textContent=MO[cm]+' '+cy;
-  const g=document.getElementById('calGr');g.innerHTML='';
-  const today=new Date(),fd=new Date(cy,cm,1).getDay(),off=fd===0?6:fd-1,dim=new Date(cy,cm+1,0).getDate();
-  for(let i=0;i<off;i++){const d=document.createElement('div');d.className='cal-day empty';g.appendChild(d);}
-  for(let d=1;d<=dim;d++){
-    const el=document.createElement('div');
-    const ds=cy+'-'+String(cm+1).padStart(2,'0')+'-'+String(d).padStart(2,'0');
-    const dt=new Date(cy,cm,d);
-    const past=dt<new Date(today.getFullYear(),today.getMonth(),today.getDate());
-    const sun=dt.getDay()===0;
-    let cls='cal-day';
-    if(past||sun)cls+=' past';
-    if(today.getDate()===d&&today.getMonth()===cm&&today.getFullYear()===cy)cls+=' today';
-    if(sd===ds)cls+=' selected';
-    el.className=cls;el.textContent=d;
-    if(!past&&!sun)el.onclick=()=>{sd=ds;rCal();};
-    g.appendChild(el);
-  }
-}
-document.getElementById('calPr').onclick=()=>{cm--;if(cm<0){cm=11;cy--;}rCal();};
-document.getElementById('calNx').onclick=()=>{cm++;if(cm>11){cm=0;cy++;}rCal();};
-rCal();
-
-// SLOTS
-let st=null;
-document.querySelectorAll('.slot:not(.taken)').forEach(s=>{
-  s.onclick=()=>{document.querySelectorAll('.slot').forEach(x=>x.classList.remove('selected'));s.classList.add('selected');st=s.dataset.t;};
-});
-
-// BOOKING
-function submitBook(){
-  const n=document.getElementById('fN').value.trim();
-  const p=document.getElementById('fP').value.trim();
-  const lo=document.getElementById('fLo').value;
-  const sv=document.getElementById('fSv').value;
-  if(!n||!p||!lo||!sv||!sd||!st){alert('Bitte fülle alle Pflichtfelder aus und wähle Datum sowie Uhrzeit.');return;}
-  document.getElementById('bkForm').style.display='none';
-  document.getElementById('bkOk').classList.add('show');
-  document.getElementById('booking').scrollIntoView({behavior:'smooth'});
-}
-function resetBook(){
-  document.getElementById('bkForm').style.display='block';
-  document.getElementById('bkOk').classList.remove('show');
-  ['fN','fL','fP','fNo'].forEach(id=>document.getElementById(id).value='');
-  document.getElementById('fLo').value='';document.getElementById('fSv').value='';document.getElementById('fBr').value='';
-  document.querySelectorAll('.slot').forEach(s=>s.classList.remove('selected'));
-  sd=null;st=null;rCal();
-}
 
 // SMOOTH SCROLL
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
