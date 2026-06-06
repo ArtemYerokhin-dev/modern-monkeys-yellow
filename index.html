@@ -602,95 +602,12 @@ footer{background:var(--bg2);border-top:1px solid rgba(255,255,255,.06);padding:
 <section class="booking-section" id="booking">
   <div class="booking-inner">
     <div class="bk-head fv">
-      <h2 class="bk-title">TERMIN<br>BUCHEN</h2>
-      <p class="bk-sub">Wähle deinen Wunschtermin — wir bestätigen per E-Mail innerhalb von 24 Stunden.</p>
+      <h2 class="bk-title">BUCHE VIA<br>INSTAGRAM</h2>
+      <p class="bk-sub">Schreib uns eine DM auf Instagram — wir antworten schnell und vereinbaren deinen Termin.</p>
     </div>
-
-    <div id="bkForm">
-      <div class="bk-grid">
-        <div class="bk-left">
-          <div class="f-2col">
-            <div><label class="f-label">Vorname *</label><input class="f-input" id="fN" type="text" placeholder="Dein Vorname"></div>
-            <div><label class="f-label">Nachname *</label><input class="f-input" id="fL" type="text" placeholder="Dein Nachname"></div>
-          </div>
-          <label class="f-label">Telefon *</label>
-          <input class="f-input" id="fP" type="tel" placeholder="+49 ...">
-          <label class="f-label">Location *</label>
-          <select class="f-select" id="fLo">
-            <option value="">Bitte wählen</option>
-            <option value="of">Offenbach — Herrnstr. 55</option>
-            <option value="ff">Frankfurt — Berger Str. 61</option>
-          </select>
-          <label class="f-label">Service *</label>
-          <select class="f-select" id="fSv">
-            <option value="">Bitte wählen</option>
-            <option>Haircut — ab €25</option>
-            <option>Beard Trim — ab €18</option>
-            <option>Fade &amp; Design — ab €30</option>
-            <option>Full Grooming — ab €50</option>
-            <option>Kids Cut — ab €15</option>
-            <option>Women's Cut — ab €35</option>
-          </select>
-          <label class="f-label">Barber (optional)</label>
-          <select class="f-select" id="fBr">
-            <option value="">Kein Wunsch</option>
-            <option>Alex</option><option>Max</option>
-            <option>Sara</option><option>Carlo</option>
-          </select>
-          <label class="f-label">Anmerkungen</label>
-          <textarea class="f-textarea" id="fNo" placeholder="Besondere Wünsche..."></textarea>
-        </div>
-
-        <div class="bk-right">
-          <label class="f-label">Datum wählen *</label>
-          <div class="cal-head">
-            <div class="cal-month" id="calMo">JUNI 2026</div>
-            <div class="cal-nav">
-              <button class="cal-navbtn" id="calPr">←</button>
-              <button class="cal-navbtn" id="calNx">→</button>
-            </div>
-          </div>
-          <div class="cal-dow">
-            <span>Mo</span><span>Di</span><span>Mi</span>
-            <span>Do</span><span>Fr</span><span>Sa</span><span>So</span>
-          </div>
-          <div class="cal-grid" id="calGr"></div>
-
-          <label class="f-label" style="margin-top:24px">Uhrzeit wählen *</label>
-          <div class="slots" id="slGr">
-            <div class="slot" data-t="09:00">09:00</div>
-            <div class="slot" data-t="09:30">09:30</div>
-            <div class="slot taken">10:00</div>
-            <div class="slot" data-t="10:30">10:30</div>
-            <div class="slot" data-t="11:00">11:00</div>
-            <div class="slot taken">11:30</div>
-            <div class="slot" data-t="12:00">12:00</div>
-            <div class="slot" data-t="13:00">13:00</div>
-            <div class="slot taken">13:30</div>
-            <div class="slot" data-t="14:00">14:00</div>
-            <div class="slot" data-t="14:30">14:30</div>
-            <div class="slot" data-t="15:00">15:00</div>
-            <div class="slot taken">15:30</div>
-            <div class="slot" data-t="16:00">16:00</div>
-            <div class="slot" data-t="16:30">16:30</div>
-            <div class="slot" data-t="17:00">17:00</div>
-          </div>
-
-          <button class="bk-submit" onclick="submitBook()">
-            <span>TERMIN BESTÄTIGEN</span>
-            <span class="bk-submit-arrow">→</span>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <div class="bk-ok" id="bkOk">
-      <div class="bk-ok-icon">✅</div>
-      <div class="bk-ok-title">GEBUCHT!</div>
-      <p class="bk-ok-text">Vielen Dank — wir haben deine Anfrage erhalten.<br>Bestätigung kommt per E-Mail.<br><br><span style="color:var(--amber)">Modern Monkeys Barbershop</span></p>
-      <br><br>
-      <a href="#booking" class="pill" onclick="resetBook();return false">
-        <span class="pill-text">Neuer Termin</span>
+    <div style="display:flex;justify-content:center;margin-top:48px" class="fv2">
+      <a href="https://www.instagram.com/modern_monkeys_barbershop_/" target="_blank" class="pill" style="font-size:1rem">
+        <span class="pill-text">@modern_monkeys_barbershop_</span>
         <span class="pill-arrow">→</span>
       </a>
     </div>
